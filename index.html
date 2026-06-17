@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Susmitha Rajlin Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- AOS Animation -->
+<link rel="stylesheet"
+href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <h1>Susmitha Rajlin</h1>
+    <p>Information Technology Student</p>
+
+    <div class="header-buttons">
+        <button onclick="changeMode()">🌙 Dark Mode</button>
+        <button onclick="toggleMenu()">☰ Menu</button>
+    </div>
+
+    <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#todo">To-Do</a></li>
+        <li><a href="#weather">Weather</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</header>
+
+<!-- HOME -->
+
+<section id="home" data-aos="fade-up">
+
+    <h2>Welcome</h2>
+
+    <p>
+        Welcome to my personal portfolio website.
+    </p>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" data-aos="fade-right">
+
+    <h2>About Me</h2>
+
+    <p>
+        I am an Information Technology student interested in
+        Web Development and Artificial Intelligence.
+    </p>
+
+    <a href="resume.pdf" download>
+        <button class="resume-btn">
+            Download Resume
+        </button>
+    </a>
+
+</section>
+
+<section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="projects-container">
+
+        <div class="project">
+            <h3>Sample Project</h3>
+            <p>My first project</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TODO -->
+
+<section id="todo" data-aos="fade-right">
+
+    <h2>To-Do List</h2>
+
+    <input type="text"
+           id="taskInput"
+           placeholder="Enter Task">
+
+    <button id="addBtn">Add</button>
+
+    <ul id="taskList"></ul>
+
+    <p id="taskCount"></p>
+
+</section>
+
+<!-- WEATHER -->
+
+<section id="weather" data-aos="fade-left">
+
+    <h2>Weather App</h2>
+
+    <input type="text"
+           id="cityInput"
+           placeholder="Enter City">
+
+    <button id="getWeatherBtn">
+        Get Weather
+    </button>
+
+    <div id="loading" class="spinner"></div>
+
+    <div id="weatherResult">
+
+        <h3 id="cityName"></h3>
+
+        <p id="temp"></p>
+
+        <p id="description"></p>
+
+        <p id="humidity"></p>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" data-aos="zoom-in">
+
+    <h2>Contact Me</h2>
+
+    <form id="contactForm">
+
+        <input type="text"
+               id="name"
+               placeholder="Your Name"
+               required>
+
+        <input type="email"
+               id="email"
+               placeholder="Your Email"
+               required>
+
+        <textarea id="message"
+                  rows="5"
+                  placeholder="Your Message"
+                  required></textarea>
+
+        <button type="submit"
+                id="submitBtn">
+            Send Message
+        </button>
+
+    </form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>© 2026 Susmitha Rajlin</p>
+
+    <div class="social-links">
+
+        <a href="https://github.com/" target="_blank">
+            GitHub
+        </a>
+
+        <a href="https://linkedin.com/" target="_blank">
+            LinkedIn
+        </a>
+
+        <a href="mailto:yourmail@gmail.com">
+            Email
+        </a>
+
+    </div>
+
+    <p id="clock"></p>
+
+</footer>
+
+<!-- TOP BUTTON -->
+
+<button id="topBtn">Top</button>
+
+<!-- CHAT BUTTON -->
+<button id="chatToggle">💬</button>
+
+<!-- CHAT BOX -->
+<div id="chatWindow">
+
+    <div class="chat-header">
+        <h3>AI Assistant</h3>
+        <button id="closeChat">✕</button>
+    </div>
+
+    <div id="chatMessages"></div>
+
+    <div class="chat-input">
+        <input id="chatInput" type="text" placeholder="Ask something...">
+        <button id="sendChatBtn">Send</button>
+    </div>
+
+</div>
+
+<!-- AOS -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration:1000,
+    once:true
+});
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f4f4;
+    color:#222;
+    line-height:1.6;
+    transition:0.3s;
+}
+
+/* DARK MODE */
+
+body.dark{
+    background:#121212;
+    color:white;
+}
+
+/* HEADER */
+
+header{
+    background:#0077ff;
+    color:white;
+    text-align:center;
+    padding:20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header-buttons{
+    margin-top:15px;
+}
+
+.header-buttons button{
+    padding:10px 15px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    margin:5px;
+}
+
+#menu{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    list-style:none;
+    margin-top:15px;
+}
+
+#menu a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+.show{
+    display:flex !important;
+}
+
+/* SECTIONS */
+
+section{
+    padding:70px 20px;
+    text-align:center;
+}
+
+section h2{
+    margin-bottom:20px;
+    color:#0077ff;
+}
+
+/* RESUME BUTTON */
+
+.resume-btn{
+    margin-top:20px;
+    padding:12px 25px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.resume-btn:hover{
+    transform:scale(1.05);
+}
+
+
+/* PROJECTS */
+
+.projects-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.project{
+    width:300px;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+}
+
+.dark .project{
+    background:#222;
+}
+
+.project h3{
+    color:#0077ff;
+    margin-bottom:10px;
+}
+
+/* TODO */
+
+#taskInput{
+    padding:10px;
+    width:250px;
+}
+
+#addBtn{
+    padding:10px 15px;
+    background:#0077ff;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+#taskList{
+    list-style:none;
+    margin-top:20px;
+}
+
+#taskList li{
+    margin:10px auto;
+    padding:10px;
+    background:white;
+    max-width:400px;
+    border-radius:8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.dark #taskList li{
+    background:#222;
+}
+
+.deleteBtn{
+    background:red;
+    color:white;
+    border:none;
+    padding:5px 10px;
+    cursor:pointer;
+}
+
+/* WEATHER */
+
+#weather input{
+    padding:10px;
+    width:250px;
+}
+
+#getWeatherBtn{
+    padding:10px 15px;
+    background:#0077ff;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+#weatherResult{
+    display:none;
+    margin-top:20px;
+}
+
+.spinner{
+    display:none;
+    width:40px;
+    height:40px;
+    margin:20px auto;
+    border:4px solid #ddd;
+    border-top:4px solid #0077ff;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* CONTACT */
+
+#contactForm{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+#contactForm input,
+#contactForm textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+#submitBtn{
+    padding:12px;
+    background:#0077ff;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0077ff;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.social-links{
+    margin:15px 0;
+}
+
+.social-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+/* TOP BUTTON */
+
+#topBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#0077ff;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+    display:none;
+}
+
+/* CHATBOT BUTTON */
+
+#chatToggle{
+    position:fixed;
+    bottom:80px;
+    right:20px;
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:#0077ff;
+    color:white;
+    font-size:26px;
+    cursor:pointer;
+    z-index:9999;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* CHAT WINDOW */
+
+#chatWindow{
+    display:none;
+    position:fixed;
+    bottom:150px;
+    right:20px;
+    width:350px;
+    height:450px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+    z-index:9999;
+    flex-direction:column;
+}
+
+.dark #chatWindow{
+    background:#222;
+    color:white;
+}
+
+.chat-header{
+    background:#0077ff;
+    color:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.chat-header button{
+    background:none;
+    border:none;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+#chatMessages{
+    flex:1;
+    padding:15px;
+    overflow-y:auto;
+}
+
+.user{
+    background:#0077ff;
+    color:white;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+    text-align:right;
+}
+
+.bot{
+    background:#e5e5e5;
+    color:black;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.dark .bot{
+    background:#444;
+    color:white;
+}
+
+.chat-input{
+    display:flex;
+    gap:5px;
+    padding:10px;
+    border-top:1px solid #ddd;
+}
+
+.chat-input input{
+    flex:1;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.chat-input button{
+    padding:10px 15px;
+    background:#0077ff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    #menu{
+        display:none;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .projects-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    #chatWindow{
+        width:95%;
+        left:10px;
+        right:10px;
+    }
+
+    #taskInput,
+    #weather input{
+        width:90%;
+        margin-bottom:10px;
+    }
+
+    .social-links a{
+        display:block;
+        margin:8px 0;
+    }
+}
