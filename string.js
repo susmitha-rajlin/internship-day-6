@@ -338,11 +338,7 @@ async function getAIResponse(message) {
             ]
         })
     });
-
-    const data = await response.json();
-    return data.choices[0].message.content;
-}
-sendBtn.addEventListener("click", async () => {
+sendBtn.addEventListener("click", () => {
     const msg = chatInput.value;
     if (!msg) return;
 
@@ -351,14 +347,10 @@ sendBtn.addEventListener("click", async () => {
 
     addMessage("Thinking...", "bot");
 
-    try {
-        const reply = await getAIResponse(msg);
-
+    setTimeout(() => {
         chatMessages.lastChild.remove(); // remove "Thinking..."
-        addMessage(reply, "bot");
-
-    } catch (error) {
-        chatMessages.lastChild.remove();
-        addMessage("Error connecting AI ❌", "bot");
-    }
-});
+        addMessage("Hi 👋 this is demo chatbot (working version)", "bot");
+    }, 800);
+}
+)
+}
