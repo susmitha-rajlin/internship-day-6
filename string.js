@@ -320,8 +320,7 @@ window.addEventListener("load", () => {
 
 // ================= AI CHATBOT =================
 
-const GROQ_API_KEY =
-    " gsk_gVhmJOEBTSVL2EjiJVrSWGdyb3FYvLbucfhjhgydhfdhujYzkn3X0Sjmt";
+const GROQ_API_KEY = "your-key-here";
 
 
 
